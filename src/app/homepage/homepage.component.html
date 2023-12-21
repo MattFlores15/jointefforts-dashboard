@@ -1,0 +1,19 @@
+<!-- src/app/homepage/homepage.component.html -->
+
+<div *ngIf="showSidebar">
+  <!-- Sidebar content here -->
+</div>
+<div>
+  <h2>Homepage</h2>
+  <div *ngFor="let card of cards" class="card">{{ card }}</div>
+  <button (click)="showLogoutConfirmation()">Logout</button>
+</div>
+
+<!-- Logout Confirmation Modal -->
+<div *ngIf="showLogoutModal" class="modal">
+  <div class="modal-content">
+    <p>Are you sure you want to logout?</p>
+    <button (click)="logout()">Yes</button>
+    <button (click)="cancelLogout()">Cancel</button>
+  </div>
+</div>
